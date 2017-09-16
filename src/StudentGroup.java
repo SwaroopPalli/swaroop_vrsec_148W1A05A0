@@ -155,17 +155,17 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void bubbleSort() {
 		// Add your implementation here
-	/*	int n=this.students.length;
+		int n=this.students.length;
 		for(int i=0;i<n-1;i++)
 			for(int j=0;j<n-i-1;j++)
-				if((this.students[j]).isGreaterThan(this.students[j+1]))
+				if((this.students[j].isGreaterThan(this.students[j+1])))
 				{
                                    Student student= new Student(j, null, null, j);
 				    student=this.students[i];
 				    this.students[i]=this.students[j];
 		    		    this.students[j]=student;	
                                  }
-		*/ 
+		
 	}
 
 	@Override
@@ -177,7 +177,7 @@ public class StudentGroup implements StudentArrayOperation {
 		}
 		else
 		{
-			//return date.bir
+			//this.date
 		}
 		return null;
 		
@@ -187,18 +187,30 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getBetweenBirthDates(Date firstDate, Date lastDate) {
 		// Add your implementation here
+		if( firstDate == null || lastDate ==null )
+		{
+			throw new IllegalArgumentException();
+		}
 		return null;
 	}
 
 	@Override
 	public Student[] getNearBirthDate(Date date, int days) {
 		// Add your implementation here
+		if( date == null)
+		{
+			throw new IllegalArgumentException();
+		}
 		return null;
 	}
 
 	@Override
 	public int getCurrentAgeByDate(int indexOfStudent) {
 		// Add your implementation here
+		if(indexOfStudent== 0)
+		{
+			throw new IllegalArgumentException();
+		}
 		
 		return 0;
 	}
@@ -232,6 +244,10 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student getNextStudent(Student student) {
 		// Add your implementation here
+		if( student == null)
+		{
+			throw new IllegalArgumentException();
+		}
 	    int i=this.students.length;
 		int index1=0;
              for(int j=0;j<i;j++)
